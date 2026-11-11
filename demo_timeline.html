@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset='utf-8'><title>ORACLE — Change Timeline</title><style>body{font-family:system-ui,sans-serif;max-width:900px;margin:2em auto;padding:0 1em;color:#111}h1{font-size:1.4em}.url{border:1px solid #ddd;border-radius:8px;padding:1em;margin:1em 0}.alert{background:#fff4e5;border-left:4px solid #e67e22;padding:.5em;margin:.5em 0}.possible{background:#eef4ff;border-left-color:#3b82f6}code{background:#f4f4f4;padding:1px 4px;border-radius:3px}time{color:#666}</style></head><body><h1>ORACLE — Change Timeline</h1>
+<p>Snapshots record when a difference was <em>observed</em>, not a claim about when the site changed.</p>
+<div class='url'><h2>http://127.0.0.1:45941/acme/pricing</h2>
+<p><time>2026-11-11T09:56:05.569246+00:00</time> status=200 normalized hash <code>0b165c4cf92d89ad</code></p>
+<p>Price: <strong>$49/mo</strong></p>
+<p>Headline: The fastest widget ever</p>
+<p><time>2026-11-11T09:56:05.623381+00:00</time> status=200 normalized hash <code>c7c5289d15b68905</code></p>
+<p>Price: <strong>$59/mo</strong></p>
+<p>Headline: The fastest widget ever, now with AI</p>
+<p><time>2026-11-11T09:56:05.680497+00:00</time> status=200 normalized hash <code>c7c5289d15b68905</code> <em>(duplicate snapshot, no change)</em></p>
+<p>Price: <strong>$59/mo</strong></p>
+<p>Headline: The fastest widget ever, now with AI</p>
+<div class='alert'><strong>pricing_changed</strong> (new)<br>Old: <code>$49/mo</code><br>New: <code>$59/mo</code><br>Evidence: <a href='http://127.0.0.1:45941/acme/pricing'>http://127.0.0.1:45941/acme/pricing</a> observed 2026-11-11T09:56:05.623381+00:00</div>
+<div class='alert'><strong>headline_changed</strong> (new)<br>Old: <code>[&#x27;The fastest widget ever&#x27;]</code><br>New: <code>[&#x27;The fastest widget ever, now with AI&#x27;]</code><br>Evidence: <a href='http://127.0.0.1:45941/acme/pricing'>http://127.0.0.1:45941/acme/pricing</a> observed 2026-11-11T09:56:05.623381+00:00</div>
+<div class='alert'><strong>new_item</strong> (new)<br>Old: <code>None</code><br>New: <code>Acme Widget Ultra</code><br>Evidence: <a href='http://127.0.0.1:45941/acme/pricing'>http://127.0.0.1:45941/acme/pricing</a> observed 2026-11-11T09:56:05.623381+00:00</div>
+<div class='alert'><strong>text_changed</strong> (new)<br>Old: <code>Acme Pricing The fastest widget ever Plans start at . $49/mo Acme Widget Basic Acme Widget Pro</code><br>New: <code>Acme Pricing The fastest widget ever, now with AI Plans start at . $59/mo Acme Widget Basic Acme Widget Pro Acme Widget Ultra</code><br>Evidence: <a href='http://127.0.0.1:45941/acme/pricing'>http://127.0.0.1:45941/acme/pricing</a> observed 2026-11-11T09:56:05.623381+00:00</div>
+</div>
+<div class='url'><h2>http://127.0.0.1:45941/beta/products</h2>
+<p><time>2026-11-11T09:56:05.596553+00:00</time> status=200 normalized hash <code>b0c44eafc5c48564</code></p>
+<p>Price: <strong>$199</strong></p>
+<p>Headline: Beta catalogue</p>
+<p><time>2026-11-11T09:56:05.652058+00:00</time> status=200 normalized hash <code>090feb90e5e754c9</code></p>
+<p>Price: <strong>$179</strong></p>
+<p>Headline: Beta catalogue — winter collection</p>
+<p><time>2026-11-11T09:56:05.707120+00:00</time> status=200 normalized hash <code>090feb90e5e754c9</code> <em>(duplicate snapshot, no change)</em></p>
+<p>Price: <strong>$179</strong></p>
+<p>Headline: Beta catalogue — winter collection</p>
+<div class='alert'><strong>meta_description_changed</strong> (new)<br>Old: <code>Beta product catalogue.</code><br>New: <code>Beta product catalogue, updated for winter.</code><br>Evidence: <a href='http://127.0.0.1:45941/beta/products'>http://127.0.0.1:45941/beta/products</a> observed 2026-11-11T09:56:05.652058+00:00</div>
+<div class='alert'><strong>pricing_changed</strong> (new)<br>Old: <code>$199</code><br>New: <code>$179</code><br>Evidence: <a href='http://127.0.0.1:45941/beta/products'>http://127.0.0.1:45941/beta/products</a> observed 2026-11-11T09:56:05.652058+00:00</div>
+<div class='alert'><strong>headline_changed</strong> (new)<br>Old: <code>[&#x27;Beta catalogue&#x27;]</code><br>New: <code>[&#x27;Beta catalogue — winter collection&#x27;]</code><br>Evidence: <a href='http://127.0.0.1:45941/beta/products'>http://127.0.0.1:45941/beta/products</a> observed 2026-11-11T09:56:05.652058+00:00</div>
+<div class='alert'><strong>new_item</strong> (new)<br>Old: <code>None</code><br>New: <code>Beta Gamma</code><br>Evidence: <a href='http://127.0.0.1:45941/beta/products'>http://127.0.0.1:45941/beta/products</a> observed 2026-11-11T09:56:05.652058+00:00</div>
+<div class='alert'><strong>text_changed</strong> (new)<br>Old: <code>Beta Products Beta catalogue Our flagship is . $199 Beta Alpha Beta Beta</code><br>New: <code>Beta Products Beta catalogue — winter collection Our flagship is . $179 Beta Alpha Beta Beta Beta Gamma</code><br>Evidence: <a href='http://127.0.0.1:45941/beta/products'>http://127.0.0.1:45941/beta/products</a> observed 2026-11-11T09:56:05.652058+00:00</div>
+</div>
+</body></html>
